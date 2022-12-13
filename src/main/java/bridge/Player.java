@@ -22,4 +22,8 @@ public class Player {
     public int position(){
         return position;
     }
+
+    public String lastResult(){
+        return choiceLog.get(choiceLog.size() - 1);
+    }
 }

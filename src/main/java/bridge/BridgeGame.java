@@ -14,10 +14,16 @@ public class BridgeGame {
     private final Bridge bridge;
     private Player player;
     private String moveResult;
-    
+
+    public BridgeGame(List<String> bridge){
+        this.bridge = new Bridge(bridge);
+        this.player = new Player(0, new ArrayList<>());
+    }
+
     public BridgeGame(List<String> bridge, Player player){
         this.bridge = new Bridge(bridge);
         this.player = player;
+        this.moveResult = player.lastResult();
     }
 
     /**

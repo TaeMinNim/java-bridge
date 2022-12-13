@@ -12,4 +12,9 @@ public class Bridge {
     public boolean canMove(int position, String answer){
         return bridge.get(position).equals(answer);
     }
+
+    public boolean isEndPoint(int position){
+        int endPoint = bridge.size() - 1;
+        return  endPoint == position;
+    }
 }

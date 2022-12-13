@@ -38,6 +38,16 @@ public class BridgeGame {
         return "X";
     }
 
+    public int condition(){
+        if(moveResult.equals("X")){
+            return GAME_OVER;
+        } else if(bridge.isEndPoint(position)){
+            return SUCCESS;
+        }
+
+        return RUNNING;
+    }
+
     /**
      * 사용자가 게임을 다시 시도할 때 사용하는 메서드
      * <p>

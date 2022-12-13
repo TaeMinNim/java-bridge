@@ -1,10 +1,17 @@
 package bridge;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
+    private final static int START_POINT = -1;
     private int position;
     private List<String> choiceLog;
+
+    public Player(){
+        this.position = START_POINT;
+        this.choiceLog = new ArrayList<>();
+    }
 
     public Player(int position, List<String> choiceLog){
         this.position = position;

@@ -11,13 +11,13 @@ public class BridgeGame {
     public final static int GAME_OVER = 1;
     public final static int SUCCESS = 2;
 
-    private Player player = new Player(0, new ArrayList<>());
     private final Bridge bridge;
+    private Player player;
     private String moveResult;
-
-
-    public BridgeGame(List<String> bridge){
+    
+    public BridgeGame(List<String> bridge, Player player){
         this.bridge = new Bridge(bridge);
+        this.player = player;
     }
 
     /**

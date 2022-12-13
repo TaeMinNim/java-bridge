@@ -80,4 +80,8 @@ public class OutputView {
         System.out.println("게임 성공 여부: " + bridgeGame.condition().getName());
         System.out.println("총 시도한 횟수: " + bridgeGame.getTryCount());
     }
+
+    public void printError(Exception e){
+        System.out.println("[ERROR] " + e.getMessage());
+    }
 }

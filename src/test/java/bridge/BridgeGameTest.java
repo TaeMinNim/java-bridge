@@ -14,24 +14,23 @@ public class BridgeGameTest {
 
     @ParameterizedTest
     @MethodSource("generateData")
-    void conditionTest(List<String> choiceLog, int result){
+    void conditionTest(List<String> choiceLog, Status result){
         int position = choiceLog.size() - 1;
-        String moveResult = choiceLog.get(choiceLog.size() - 1);
         Player player = new Player(position, choiceLog);
 
         BridgeGame bridgeGame = new BridgeGame(bridge, player);
-        int actual = bridgeGame.condition();
+        Status actual = bridgeGame.condition();
 
         assertThat(actual).isEqualTo(result);
     }
 
     static Stream<Arguments> generateData(){
         return Stream.of(
-                Arguments.of(List.of("U"), BridgeGame.RUNNING),
-                Arguments.of(List.of("D"), BridgeGame.GAME_OVER),
-                Arguments.of(List.of("U", "U"), BridgeGame.RUNNING),
-                Arguments.of(List.of("U", "D"), BridgeGame.GAME_OVER),
-                Arguments.of(List.of("U", "U", "D"), BridgeGame.SUCCESS)
+                Arguments.of(List.of("U"), Status.Running),
+                Arguments.of(List.of("D"), Status.GameOver),
+                Arguments.of(List.of("U", "U"), Status.Running),
+                Arguments.of(List.of("U", "D"), Status.GameOver),
+                Arguments.of(List.of("U", "U", "D"), Status.Success)
         );
     }
 }

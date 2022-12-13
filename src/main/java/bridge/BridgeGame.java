@@ -44,14 +44,14 @@ public class BridgeGame {
         return "X";
     }
 
-    public int condition(){
+    public Status condition(){
         if(moveResult.equals("X")){
-            return GAME_OVER;
+            return Status.GameOver;
         } else if(bridge.isEndPoint(player.position())){
-            return SUCCESS;
+            return Status.Success;
         }
 
-        return RUNNING;
+        return Status.Running;
     }
 
     /**

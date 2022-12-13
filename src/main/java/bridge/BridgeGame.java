@@ -23,7 +23,7 @@ public class BridgeGame {
     public BridgeGame(List<String> bridge, Player player){
         this.bridge = new Bridge(bridge);
         this.player = player;
-        this.moveResult = player.lastResult();
+        this.moveResult = getMoveResult(player.lastResult());
     }
 
     /**

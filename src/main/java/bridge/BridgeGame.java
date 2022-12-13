@@ -12,7 +12,9 @@ public class BridgeGame {
     public final static int SUCCESS = 2;
 
     private final Bridge bridge;
-    private List<String> choice = new ArrayList<>();
+    private List<String> choiceLog = new ArrayList<>();
+    private String moveResult;
+    private int position = 0;
 
     public BridgeGame(List<String> bridge){
         this.bridge = new Bridge(bridge);
@@ -23,7 +25,17 @@ public class BridgeGame {
      * <p>
      * 이동을 위해 필요한 메서드의 반환 타입(return type), 인자(parameter)는 자유롭게 추가하거나 변경할 수 있다.
      */
-    public void move() {
+    public void move(String choice) {
+        choiceLog.add(choice);
+        moveResult = getMoveResult(choice);
+        position++;
+    }
+
+    private String getMoveResult(String choice){
+        if(bridge.canMove(position, choice)){
+            return "O";
+        }
+        return "X";
     }
 
     /**

@@ -5,6 +5,7 @@ public class Size {
 
     public Size(int size){
         validData(size);
+        this.size = size;
     }
 
     private void validData(int size){

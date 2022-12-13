@@ -17,4 +17,8 @@ public class Bridge {
         int endPoint = bridge.size() - 1;
         return  endPoint == position;
     }
+
+    public List<String> getBridge(){
+        return bridge;
+    }
 }

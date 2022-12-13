@@ -26,4 +26,8 @@ public class Player {
     public String lastResult(){
         return choiceLog.get(choiceLog.size() - 1);
     }
+
+    public List<String> getChoiceLog(){
+        return choiceLog;
+    }
 }

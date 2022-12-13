@@ -66,4 +66,12 @@ public class BridgeGame {
     private void initGame(){
         this.player = new Player(0, new ArrayList<>());
     }
+
+    public List<String> getBridge(){
+        return bridge.getBridge();
+    }
+
+    public List<String> getPlayer(){
+        return player.getChoiceLog();
+    }
 }
